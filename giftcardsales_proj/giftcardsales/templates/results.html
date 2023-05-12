@@ -1,0 +1,26 @@
+{% load static %}
+
+<html>
+  <link href="{% static 'assets/css/argon-dashboard.min.css' %}" rel="stylesheet" />
+
+  <table class="table align-items-center mb-0" style="width:1000px">
+    <tr>
+      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Store Name</th>
+      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gift Card Balance</th>
+      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Selling Price</th>
+      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Network</th>
+      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Postal Address</th>
+      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email Address</th>
+    </tr>
+    {% for result in allentries %}
+    <tr>
+      <td><p class="text-xs font-weight-bold mb-1">{{ result.store_name }}</p></td>
+      <td><p class="text-xs font-weight-bold mb-1">{{ result.gift_card_balance }}</p></td>
+      <td><p class="text-xs font-weight-bold mb-1">{{ result.selling_price }}</p></td>
+      <td><p class="text-xs font-weight-bold mb-1">{{ result.network }}</p></td>
+      <td><p class="text-xs font-weight-bold mb-1">{{ result.postal_address }}</p></td>
+      <td><p class="text-xs font-weight-bold mb-1">{{ result.email_address }}</p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</html>
